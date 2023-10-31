@@ -1,0 +1,58 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.black]
+exclude = '''
+(
+  /(
+    | \.git
+    | \.env
+    | \.venv
+  )/
+)
+'''
+include = '\.pyi?$'
+line-length = 120
+
+[tool.isort]
+ensure_newline_before_comments = true
+force_grid_wrap = 0
+include_trailing_comma = true
+line_length = 120
+multi_line_output = 3
+profile = "black"
+use_parentheses = true
+
+[tool.poetry]
+authors = []
+description = "Service for words translation"
+name = "translation-service"
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+alembic = "*"
+asyncpg = "*"
+environs = "*"
+fastapi = "*"
+hypothesis = "*"
+inject = "*"
+psycopg2-binary = "*"
+pylama = "*"
+pytest = "*"
+pytest-asyncio = "*"
+pytest-mock = "*"
+pytest-mypy = "*"
+python = "^3.10"
+python-dotenv = "*"
+python-multipart = "*"
+setuptools = "*"
+sqlalchemy = "*"
+sqlalchemy2-stubs = "*"
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+isort = "*"
+toml-sort = "*"
+uvicorn = "*"
