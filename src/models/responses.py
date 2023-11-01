@@ -1,9 +1,11 @@
 from dataclasses import dataclass
 
+from models.words import Word
+
 
 @dataclass
 class SingleWord:
-    item: ...
+    item: Word
 
 
 @dataclass
@@ -13,7 +15,11 @@ class SingleWordResponse:
 
 @dataclass
 class PaginatedWords:
-    items: ...
+    items: list[Word]
+    total_item_count: int
+    page: int
+    per_page: int
+    page_count: int
 
 
 @dataclass
